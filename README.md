@@ -3,304 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <title>New Jeans</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css"> 
     <style>
         /* 全体の基本スタイル */
         body {
             font-family: 'Arial', sans-serif;
-            line-height: 1.6;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
         }
 
-        h1, h2, h3 {
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-top: 20px;
             color: #333;
-            margin-bottom: 10px;
         }
 
         h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 5px;
-        }
-
-        /* ヘッダーのスタイル */
-        header {
-            background-color: #333;
-            padding: 10px 0;
-            color: #fff;
-        }
-
-        header .nav ul {
-            list-style: none;
-            padding: 0;
+            font-size: 28px;
+            margin-top: 40px;
+            color: #ff6347;
             text-align: center;
         }
 
-        header .nav ul li {
-            display: inline;
-            margin-right: 20px;
+        /* リストのスタイル */
+        ul {
+            margin: 20px auto;
+            padding: 0;
+            max-width: 900px;
+            list-style: none;
         }
 
-        header .nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
+        ul li {
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
         }
 
-        header .nav ul li a:hover {
-            text-decoration: underline;
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #ff6347;
+            font-size: 24px;
+            top: 5px;
         }
 
-        /* ロゴスタイル */
-        .logo img {
+        /* 画像のスタイル */
+        img {
             width: 100%;
-            max-width: 200px;
+            max-width: 600px;
             display: block;
             margin: 20px auto;
-        }
-
-        /* スライドショー */
-        .slideshow-container {
-            position: relative;
-            max-width: 100%;
-            margin: auto;
-            overflow: hidden;
-        }
-
-        .slide {
-            display: none;
-            width: 100%;
-        }
-
-        .fade {
-            animation-name: fade;
-            animation-duration: 1.5s;
-        }
-
-        @keyframes fade {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* メニュー */
-        .menu-group {
-            padding: 0;
-            margin: 0;
-            list-style: none;
-            text-align: center;
-        }
-
-        .menu-item {
-            display: inline-block;
-            margin-right: 30px;
-        }
-
-        .menu-item a {
-            text-decoration: none;
-            color: #333;
-            font-size: 18px;
-        }
-
-        .menu-item a:hover {
-            color: #ff6347;
-        }
-
-        /* コメントセクション */
-        .comment-item {
-            border-bottom: 1px solid #ccc;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-        }
-
-        .comment-item p {
-            margin: 5px 0;
-        }
-
-        .comment-item .name {
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        /* フォームのスタイル */
-        #commentForm {
-            background-color: #fff;
-            padding: 20px;
-            margin: 20px 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
 
-        #commentForm label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        #commentForm input, #commentForm textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        #commentForm button {
-            padding: 10px 20px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        #commentForm button:hover {
-            background-color: #ff6347;
+        /* セクションのコンテナ */
+        .section-box {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
         }
 
         /* レスポンシブデザイン */
         @media (max-width: 768px) {
-            .menu-item {
-                display: block;
-                margin: 10px 0;
+            h1 {
+                font-size: 30px;
             }
 
-            .slideshow-container {
-                width: 100%;
+            h2 {
+                font-size: 24px;
             }
 
-            .logo img {
-                max-width: 150px;
+            ul li {
+                font-size: 16px;
+            }
+
+            img {
+                max-width: 100%;
             }
         }
 
     </style>
 </head>
+
 <body>
 
-<!-- ロゴ -->
-<div><a href="https://www.newjeans.jp"><img src="logo.png" width="200" alt="New Jeans Logo"></a></div>
-
-<!-- スライドショー -->
-<div class="slideshow-container">
-    <div class="slide fade">
-        <img src="omg.png" alt="スライド1" style="width:100%">
-    </div>
-    <div class="slide fade">
-        <img src="logo-whale.png" alt="スライド2" style="width:100%">
-    </div>
-    <div class="slide fade">
-        <img src="new.png" alt="スライド3" style="width:100%">
-    </div>
-</div>
-
-<h2>MENU</h2>
-
-<!-- ヘッダー -->
-<header>
-    <nav class="nav">
-        <ul class="menu-group">
-            <li class="menu-item"><a href="access.html">人材・採用</a></li>
-            <li class="menu-item"><a href="information.html">事業・製品情報</a></li>
+    <div class="section-box">
+        <h1>採用情報</h1>
+        <ul>
+            <li>PTO財閥は、低い基本給、ほぼ支給されないボーナス、極端に少ない年間休日、取得困難な有給、育児休暇取得後のキャリアに影響があるなど、過酷な労働環境と成果主義が支配する企業であり、心身ともに限界を超えて働く覚悟が必要です。</li>
+            <li>PTO財閥は、新卒採用において、バリバリの学歴フィルターを強く設けており、名門大学卒やトップの学部からの応募者しかほとんど採用しない傾向があり、学歴が低いと採用のチャンスはほぼなく、厳しい選考基準を突破できるのはほんの一握りのエリートのみです。</li>
         </ul>
-    </nav>  
-</header>
+    </div>
 
-<main>
-<h1>PTO財閥グループについて</h1>
-<ul>
-    <li>
-        瀬尾の死後、PTO財閥は一度、内部で混乱をきたします。瀬尾の死は事故か暗殺か、その真相は未解決のままであり、PTOの幹部の間で権力争いが激化しました。しかし、この混乱を乗り越えた後、PTOはさらに進化し、新たな方向性を見出します。
-    </li>
-    <li>
-        PTO財閥の急成長と多角化の中で、最大のライバルとなったのが岡部財閥でした。岡部財閥は長年にわたり、日本国内での金融業界や製造業で影響力を誇っていましたが、PTOの成長に圧倒される形で次第に苦境に立たされます。
-    </li>
-</ul>
+    <div class="section-box">
+        <h2>清掃部門 - 清掃スタッフ</h2>
+        <div><img src="minji.png" alt="清掃スタッフ"></div>
+        <ul>
+            <li>求める人物像: 体力勝負、そして精神的にもタフな人物。清掃作業を一人で黙々と続けることが求められる。</li>
+            <li>仕事内容: 高層ビルやオフィスフロア、公共施設を含む広範囲な清掃業務。午前7時から深夜までシフトが組まれる。</li>
+            <li>待遇: 基本給は業界平均程度だが、残業代なし。</li>
+            <li>備考: 体力的にも精神的にも限界を感じることが多い業務ですが、黙々と続ければ安定して働けると考える人には向いています。</li>
+        </ul>
+    </div>
 
-<h2>役員一覧</h2>
+    <div class="section-box">
+        <h2>広告代理部門 - 広告営業・企画担当</h2>
+        <div><img src="hani.png" alt="広告営業・企画担当"></div>
+        <ul>
+            <li>仕事内容: 広告戦略の企画、クライアントとの商談、キャンペーンの立案・実施。業務はクライアントからの急な変更や要求に振り回され、夜遅くまで作業が続くことが常。</li>
+            <li>求める人物像: 業界経験があるのはもちろん、計画的に物事を進める力よりも、即応力と忍耐力が求められる。</li>
+            <li>待遇: 初任給はそこそこだが、成果を上げられない場合、営業担当としての責任を問われることが多い。</li>
+            <li>備考: アドレナリンが必要な仕事で、常に「結果を出さなければ意味がない」と言わんばかりの圧力を感じます。</li>
+        </ul>
+    </div>
 
-<h3>【取締役社長】竹内悠希氏</h3>
+    <div class="section-box">
+        <h2>営業部門 - 営業職（新規開拓・既存顧客対応）</h2>
+        <div><img src="herin.png" alt="営業職"></div>
+        <ul>
+            <li>仕事内容: 新規顧客開拓のために無駄に多くの電話をかけ、契約を取る。数字に追われる毎日で、ノルマ未達成の場合、深夜まで働いてでも契約を取ることが求められる。</li>
+            <li>求める人物像: 無理な要求にも応え、最も厳しい状況でも粘り強く契約を取れるメンタルを持っている人物。</li>
+            <li>待遇: 基本給はかなり低く、インセンティブで生活することが前提。契約を取らないと昇給も昇進もないため、常に契約を取ることが最優先。</li>
+            <li>備考: 目標未達成で評価が下がり、社内での立場も厳しくなるため、精神的なプレッシャーは非常に大きい。</li>
+        </ul>
+    </div>
 
-<div class="logo"><img src="take.png" alt="take.png"></div>
-
-<h3>【動物愛護活動代表】笠原大和氏</h3>
-
-<div class="logo"><img src="kasa.png" alt="kasa.png"></div>
-
-<!-- コメントセクション -->
-<h2>【お問い合わせ】</h2>
-
-<!-- コメントフォーム -->
-<form id="commentForm">
-    <label for="name">お名前:</label>
-    <input type="text" id="name" name="name" required>
-
-    <label for="comment">コメント:</label>
-    <textarea id="comment" name="comment" rows="4" required></textarea>
-
-    <button type="submit">コメントを送信</button>
-</form>
-
-<!-- コメント一覧 -->
-<h3>コメント一覧</h3>
-<div id="commentList">
-    <!-- コメントがここに表示されます -->
-</div>
-
-<script>
-// スライドショーのロジック
-let slideIndex = 0;
-
-function showSlides() {
-    let slides = document.getElementsByClassName("slide");
-
-    // すべてのスライドを非表示にする
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-    }
-
-    slideIndex++;
-    if (slideIndex > slides.length) {
-        slideIndex = 1;  // 最初のスライドに戻る
-    }
-
-    slides[slideIndex - 1].style.display = "block";  // 現在のスライドを表示
-    setTimeout(showSlides, 3000);  // 3秒ごとにスライドを変更
-}
-
-// ページ読み込み時にスライドショーを開始
-document.addEventListener("DOMContentLoaded", showSlides);
-
-// コメントを追加する関数
-document.getElementById("commentForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // フォームの送信を防ぐ
-
-    // 入力された名前とコメントを取得
-    const name = document.getElementById("name").value;
-    const comment = document.getElementById("comment").value;
-
-    // コメントを表示するエリアに新しいコメントを追加
-    const commentList = document.getElementById("commentList");
-
-    const commentItem = document.createElement("div");
-    commentItem.classList.add("comment-item");
-
-    commentItem.innerHTML = `
-        <p class="name">${name}</p>
-        <p>${comment}</p>
-    `;
-
-    commentList.appendChild(commentItem);
-
-    // 入力フォームをリセット
-    document.getElementById("commentForm").reset();
-});
-</script>
-
-</main>
 </body>
 </html>
