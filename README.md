@@ -183,18 +183,18 @@
 <body>
 
 <!-- ロゴ -->
-<div><a href="https://www.newjeans.jp"><img src="images/logo.png" width="200" alt="New Jeans Logo"></a></div>
+<div><a href="https://www.newjeans.jp"><img src="logo.png" width="200" alt="New Jeans Logo"></a></div>
 
 <!-- スライドショー -->
 <div class="slideshow-container">
     <div class="slide fade">
-        <img src="images/omg.png" alt="スライド1" style="width:100%">
+        <img src="omg.png" alt="スライド1" style="width:100%">
     </div>
     <div class="slide fade">
-        <img src="images/logo-whale.png" alt="スライド2" style="width:100%">
+        <img src="logo-whale.png" alt="スライド2" style="width:100%">
     </div>
     <div class="slide fade">
-        <img src="images/new.png" alt="スライド3" style="width:100%">
+        <img src="new.png" alt="スライド3" style="width:100%">
     </div>
 </div>
 
@@ -225,11 +225,11 @@
 
 <h3>【取締役社長】竹内悠希氏</h3>
 
-<div class="logo"><img src="images/take.png" alt="take.png"></div>
+<div class="logo"><img src="take.png" alt="take.png"></div>
 
 <h3>【動物愛護活動代表】笠原大和氏</h3>
 
-<div class="logo"><img src="images/kasa.png" alt="kasa.png"></div>
+<div class="logo"><img src="kasa.png" alt="kasa.png"></div>
 
 <!-- コメントセクション -->
 <h2>【お問い合わせ】</h2>
