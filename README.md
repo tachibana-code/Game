@@ -5,19 +5,74 @@
     <title>New Jeans</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* スライドショーのコンテナ */
+        /* 全体の基本スタイル */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+
+        /* ヘッダーのスタイル */
+        header {
+            background-color: #333;
+            padding: 10px 0;
+            color: #fff;
+        }
+
+        header .nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        header .nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        header .nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        header .nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* ロゴスタイル */
+        .logo img {
+            width: 100%;
+            max-width: 200px;
+            display: block;
+            margin: 20px auto;
+        }
+
+        /* スライドショー */
         .slideshow-container {
             position: relative;
             max-width: 100%;
             margin: auto;
+            overflow: hidden;
         }
 
-        /* 各スライドの基本スタイル */
         .slide {
             display: none;
+            width: 100%;
         }
 
-        /* フェードインアニメーション */
         .fade {
             animation-name: fade;
             animation-duration: 1.5s;
@@ -32,10 +87,33 @@
             }
         }
 
-        /* コメント表示エリア */
+        /* メニュー */
+        .menu-group {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-align: center;
+        }
+
+        .menu-item {
+            display: inline-block;
+            margin-right: 30px;
+        }
+
+        .menu-item a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .menu-item a:hover {
+            color: #ff6347;
+        }
+
+        /* コメントセクション */
         .comment-item {
             border-bottom: 1px solid #ccc;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             padding-bottom: 10px;
         }
 
@@ -45,65 +123,78 @@
 
         .comment-item .name {
             font-weight: bold;
+            font-size: 16px;
         }
 
-        /* フッターのスタイル */
-        footer {
-            background-color: #333;
-            color: white;
+        /* フォームのスタイル */
+        #commentForm {
+            background-color: #fff;
             padding: 20px;
-            text-align: center;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
 
-        footer .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
+        #commentForm label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
         }
 
-        footer nav ul {
-            list-style-type: none;
-            padding: 0;
+        #commentForm input, #commentForm textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
 
-        footer nav ul li {
-            display: inline;
-            margin-right: 10px;
+        #commentForm button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
         }
 
-        footer nav ul li a {
-            color: white;
-            text-decoration: none;
+        #commentForm button:hover {
+            background-color: #ff6347;
         }
 
-        footer nav ul li a:hover {
-            text-decoration: underline;
+        /* レスポンシブデザイン */
+        @media (max-width: 768px) {
+            .menu-item {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .slideshow-container {
+                width: 100%;
+            }
+
+            .logo img {
+                max-width: 150px;
+            }
         }
 
-        footer .footer-content a {
-            color: white;
-            text-decoration: none;
-        }
-
-        footer .footer-content a:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
 
 <!-- ロゴ -->
-<div><a href="https://www.newjeans.jp"><img src="images/logo.png" width="600" alt="New Jeans Logo"></a></div>
+<div><a href="https://www.newjeans.jp"><img src="images/logo.png" width="200" alt="New Jeans Logo"></a></div>
 
 <!-- スライドショー -->
 <div class="slideshow-container">
     <div class="slide fade">
-        <img src="images/omg.png" alt="New Jeans group performing" style="width:100%">
+        <img src="images/omg.png" alt="スライド1" style="width:100%">
     </div>
     <div class="slide fade">
-        <img src="images/logo-whale.png" alt="Whale logo" style="width:100%">
+        <img src="images/logo-whale.png" alt="スライド2" style="width:100%">
     </div>
     <div class="slide fade">
-        <img src="images/new.png" alt="New Jeans group" style="width:100%">
+        <img src="images/new.png" alt="スライド3" style="width:100%">
     </div>
 </div>
 
@@ -113,32 +204,35 @@
 <header>
     <nav class="nav">
         <ul class="menu-group">
-            <li class="menu-item"><a href="access.html">PROFILE</a></li>
-            <li class="menu-item"><a href="information.html">MUSIC</a></li>
+            <li class="menu-item"><a href="access.html">人材・採用</a></li>
+            <li class="menu-item"><a href="information.html">事業・製品情報</a></li>
         </ul>
     </nav>  
 </header>
 
 <main>
-<h1>Newjeansとは</h1>
+<h1>PTO財閥グループについて</h1>
 <ul>
     <li>
-        NewJeansは、新レーベル『ADOR』よりデビューした最初のアーティストです。
+        瀬尾の死後、PTO財閥は一度、内部で混乱をきたします。瀬尾の死は事故か暗殺か、その真相は未解決のままであり、PTOの幹部の間で権力争いが激化しました。しかし、この混乱を乗り越えた後、PTOはさらに進化し、新たな方向性を見出します。
     </li>
     <li>
-        少女時代やf(x)、Red Velvetなど、名だたるアーティストの作品に携わってきたミン・ヒジン氏がグループ制作を指揮しました。
-        <a href="https://www.newjeans.jp/">New jeans</a>
+        PTO財閥の急成長と多角化の中で、最大のライバルとなったのが岡部財閥でした。岡部財閥は長年にわたり、日本国内での金融業界や製造業で影響力を誇っていましたが、PTOの成長に圧倒される形で次第に苦境に立たされます。
     </li>
 </ul>
 
-<h2>K‐POPアイドル</h2>
+<h2>役員一覧</h2>
 
-<h3>日本デビュー曲は『How sweet』</h3>
+<h3>【取締役社長】竹内悠希氏</h3>
 
-<div class="logo"><img src="images/logo-whale.png" alt="Whale Logo"></div>
+<div class="logo"><img src="images/take.png" alt="take.png"></div>
+
+<h3>【動物愛護活動代表】笠原大和氏</h3>
+
+<div class="logo"><img src="images/kasa.png" alt="kasa.png"></div>
 
 <!-- コメントセクション -->
-<h2>【コメント】</h2>
+<h2>【お問い合わせ】</h2>
 
 <!-- コメントフォーム -->
 <form id="commentForm">
@@ -195,7 +289,7 @@ document.getElementById("commentForm").addEventListener("submit", function(event
     const commentItem = document.createElement("div");
     commentItem.classList.add("comment-item");
 
-    commentItem.innerHTML = ` 
+    commentItem.innerHTML = `
         <p class="name">${name}</p>
         <p>${comment}</p>
     `;
@@ -208,20 +302,5 @@ document.getElementById("commentForm").addEventListener("submit", function(event
 </script>
 
 </main>
-
-<!-- フッター -->
-<footer>
-    <div class="footer-content">
-        <p>&copy; 2025 New Jeans. </p>
-      
-        <div>
-            <p>フォローする:</p>
-           
-            <a href="https://www.instagram.com/newjeans_official/" target="_blank">Instagram</a> |
-            <a href="https://www.youtube.com/@NewJeans_official" target="_blank">YouTube</a>
-        </div>
-    </div>
-</footer>
-
 </body>
 </html>
