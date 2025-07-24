@@ -1,29 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <title>New Jeans</title>
-    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 全体の基本スタイル */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-top: 40px;
+            color: #ff6347;
+        }
+
+        /* 画像のスタイル */
+        img {
+            width: 100%;
+            max-width: 600px;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+
+        /* リストのスタイル */
+        ul {
+            margin: 20px auto;
+            padding: 0;
+            max-width: 900px;
+            list-style: none;
+        }
+
+        ul li {
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #ff6347;
+            font-size: 24px;
+            top: 5px;
+        }
+
+        /* ボックスシャドウや背景色 */
+        .content-box {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        /* レスポンシブデザイン */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 30px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            ul li {
+                font-size: 16px;
+            }
+
+            img {
+                max-width: 100%;
+            }
+        }
+
+    </style>
 </head>
 
 <body>
 
-    <h1>世界に驚きを、熱狂を、喜びを、癒やしを。</h1>
+    <div class="content-box">
+        <h1>世界に驚きを、熱狂を、喜びを、癒やしを。</h1>
+        <h2>東京に営業</h2>
+        <div><img src="images/tokyo.png" alt="東京営業"></div>
+        <ul>
+            <li>PTO財閥では、社員一人一人が最大の成果を上げるために、どんな状況でも全力で取り組むことを求めています。例えば、経費で東京に営業に行った際、本来の目的を果たすべきところを、自由時間を使って観光に出かけてしまったというエピソードもあります。</li>
+        </ul>
+    </div>
 
-    <h2>東京に営業</h2>
- 
-            <div><img src="images/tokyo.png"></div>
-        
-   
-    <ul>
-        <li>PTO財閥では、社員一人一人が最大の成果を上げるために、どんな状況でも全力で取り組むことを求めています。例えば、経費で東京に営業に行った際、本来の目的を果たすべきところを、自由時間を使って観光に出かけてしまったというエピソードもあります。</li>
-    </ul>
-    
-    <h2>豪雨でも営業</h2>
-    <div><img src="images/eigyo.png"></div>
-    <ul>
-        <li>PTO財閥では、社員一人一人がプロフェッショナルとして最大限の努力を惜しまず、どんな困難にも立ち向かう姿勢を重視しています。たとえば、豪雨の中、福山へ自転車で営業に向かうという情熱的な行動も、弊社の「挑戦し続ける精神」を体現するものとして評価されています。</li>
-    </ul>
+    <div class="content-box">
+        <h2>豪雨でも営業</h2>
+        <div><img src="images/eigyo.png" alt="豪雨営業"></div>
+        <ul>
+            <li>PTO財閥では、社員一人一人がプロフェッショナルとして最大限の努力を惜しまず、どんな困難にも立ち向かう姿勢を重視しています。たとえば、豪雨の中、福山へ自転車で営業に向かうという情熱的な行動も、弊社の「挑戦し続ける精神」を体現するものとして評価されています。</li>
+        </ul>
+    </div>
 
 </body>
 </html>
